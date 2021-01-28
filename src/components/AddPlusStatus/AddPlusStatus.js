@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react';
-import { ProsKomma } from 'proskomma';
+import React, {Fragment} from 'react';
 import StoreStatus from '../StoreStatus';
 import AddDocument from '../AddDocument';
 
-const AddPlusStatus = () => {
-  return (
-    <Fragment>
-      <StoreStatus />
-      <AddDocument />
-    </Fragment>
-  );
+const AddPlusStatus = ({pk}) => {
+    return (
+        <Fragment>
+            <div>Version {pk.packageVersion()}</div>
+            <StoreStatus pk={pk}/>
+            <AddDocument pk={pk}/>
+        </Fragment>
+    );
 };
 
 export default AddPlusStatus;

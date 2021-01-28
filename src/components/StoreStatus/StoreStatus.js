@@ -2,9 +2,9 @@ import React from 'react';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-const StoreStatus = () => {
-    const nDocSets = 2;
-    const nDocuments = 3;
+const StoreStatus = ({pk}) => {
+    const nDocSets = pk.nDocSets();
+    const nDocuments = pk.nDocuments();
     return (<CardContent>
         <Typography variant="h6">Proskomma Store Status</Typography>
         <Typography variant="body2">{nDocSets} DocSet{nDocSets === 1 ? "" : "s"}</Typography>

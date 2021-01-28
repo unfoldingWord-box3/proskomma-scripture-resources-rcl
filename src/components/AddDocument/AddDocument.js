@@ -8,7 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import Snackbar from '@material-ui/core/Snackbar';
 import Alert from '@material-ui/lab/Alert';
 
-const AddDocument = () => {
+const AddDocument = ({pk}) => {
     const [docLang, setDocLang] = useState("");
     const [docAbbr, setDocAbbr] = useState("");
     const [docContent, setDocContent] = useState("");
@@ -72,6 +72,7 @@ const AddDocument = () => {
 
     return (
         <Fragment>
+            <div>Processor: {pk.processor()}</div>
             <Button color="primary" onClick={onDialogOpen}>
                 Add Document
             </Button>
