@@ -19,6 +19,10 @@ const AddDocument = ({text}) => {
     const [snackbarSeverity, setSnackbarSeverity] = useState("success");
 
     const onDialogOpen = () => {
+        setDocLang("");
+        setDocAbbr("");
+        setDocType("");
+        setDocContent("");
         setDialogOpen(true);
     };
 
@@ -47,6 +51,7 @@ const AddDocument = ({text}) => {
             errors.push("No content provided");
         }
         if (errors.length === 0) {
+            // Do import here!!!
             setSnackbarSeverity("success");
             setSnackbarMessage("Document Added");
             setSnackbarOpen(true);
