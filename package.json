@@ -1,0 +1,31 @@
+{
+  "name": "proskomma-scripture-resources-rcl",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "styleguidist server",
+    "build": "./node_modules/.bin/babel src --out-dir lib"
+  },
+  "repository": "git@github.com:unfoldingWord-box3/proskomma-scripture-resources-rcl.git",
+  "author": "Mark Howe <mvahowe@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@material-ui/core": "^4.x",
+    "prop-types": "^15.x",
+    "react": "^16.x",
+    "react-dom": "^16.x"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@material-ui/core": "^4.11.3",
+    "babel-loader": "^8.2.2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-styleguidist": "^11.1.5",
+    "webpack": "^5.18.0"
+  }
+}
