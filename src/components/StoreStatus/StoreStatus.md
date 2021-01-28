@@ -4,7 +4,7 @@ Display global stats about Proskomma.
 
 ```jsx
 // import { ProsKomma } from 'proskomma';
-import StoreStatus from "./StoreStatus.js";
+import StoreStatus from "./StoreStatus";
 
-<StoreStatus text="Hello Proskomma devs!"/>
+<StoreStatus/>
 ```

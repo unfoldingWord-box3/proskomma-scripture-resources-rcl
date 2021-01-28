@@ -8,7 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import Snackbar from '@material-ui/core/Snackbar';
 import Alert from '@material-ui/lab/Alert';
 
-const AddDocument = ({text}) => {
+const AddDocument = () => {
     const [docLang, setDocLang] = useState("");
     const [docAbbr, setDocAbbr] = useState("");
     const [docContent, setDocContent] = useState("");

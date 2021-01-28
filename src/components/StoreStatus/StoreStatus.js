@@ -2,7 +2,7 @@ import React from 'react';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-const StoreStatus = ({text}) => {
+const StoreStatus = () => {
     const nDocSets = 2;
     const nDocuments = 3;
     return (<CardContent>
