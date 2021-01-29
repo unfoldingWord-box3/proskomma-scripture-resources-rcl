@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useState, useContext} from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -8,7 +8,9 @@ import TextField from '@material-ui/core/TextField';
 import Snackbar from '@material-ui/core/Snackbar';
 import Alert from '@material-ui/lab/Alert';
 
-const AddDocument = ({pk}) => {
+import ProskommaContext from '../../ProskommaContext/ProskommaContext';
+
+const AddDocument = () => {
     const [docLang, setDocLang] = useState("");
     const [docAbbr, setDocAbbr] = useState("");
     const [docContent, setDocContent] = useState("");
@@ -17,6 +19,7 @@ const AddDocument = ({pk}) => {
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState("");
     const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+    const pk = useContext(ProskommaContext);
 
     const onDialogOpen = () => {
         setDocLang("");
@@ -72,7 +75,7 @@ const AddDocument = ({pk}) => {
 
     return (
         <Fragment>
-            <div>Processor: {pk.processor()}</div>
+            <div>Processor: {pk.processor()}; id={pk.processorId}</div>
             <Button color="primary" onClick={onDialogOpen}>
                 Add Document
             </Button>
