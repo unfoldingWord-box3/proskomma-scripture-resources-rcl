@@ -10,7 +10,7 @@ import Alert from '@material-ui/lab/Alert';
 
 import ProskommaContext from '../../ProskommaContext/ProskommaContext';
 
-const AddDocument = () => {
+const AddDocument = (props) => {
     const [docLang, setDocLang] = useState("");
     const [docAbbr, setDocAbbr] = useState("");
     const [docContent, setDocContent] = useState("");
@@ -19,6 +19,7 @@ const AddDocument = () => {
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState("");
     const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+
     const pk = useContext(ProskommaContext);
 
     const onDialogOpen = () => {
@@ -54,9 +55,11 @@ const AddDocument = () => {
             errors.push("No content provided");
         }
         if (errors.length === 0) {
-            // Do import here!!!
+            // import without GraphQL for now
+            pk.importDocument({lang: docLang, abbr: docAbbr}, docType, docContent);
+            props.setChangeId(props.changeId + 1);
             setSnackbarSeverity("success");
-            setSnackbarMessage("Document Added");
+            setSnackbarMessage(`Document Added (docSets: ${pk.nDocSets()}; documents: ${pk.nDocuments()} `);
             setSnackbarOpen(true);
             setDialogOpen(false);
         } else {
@@ -75,7 +78,7 @@ const AddDocument = () => {
 
     return (
         <Fragment>
-            <div>Processor: {pk.processor()}; id={pk.processorId}</div>
+            <div>Processor id={pk.processorId}</div>
             <Button color="primary" onClick={onDialogOpen}>
                 Add Document
             </Button>
@@ -122,7 +125,7 @@ const AddDocument = () => {
                 open={snackbarOpen}
                 message={snackbarMessage}
                 onClose={onSnackbarClose}
-                autoHideDuration="4000"
+                autoHideDuration={4000}
             >
                 <Alert severity={snackbarSeverity}>{snackbarMessage}</Alert>
             </Snackbar>
