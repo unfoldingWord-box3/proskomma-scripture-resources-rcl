@@ -3,7 +3,16 @@
 Add a document to Proskomma.
 
 ```jsx
-import AddDocument from "./AddDocument";
+import AddDocument from './AddDocument';
+import ProskommaContextProvider from '../../ProskommaContext';
 
-<AddDocument/>
+function Component() {
+  return (
+    <ProskommaContextProvider>
+      <AddDocument />
+    </ProskommaContextProvider>
+  );
+}
+
+<Component />;
 ```
