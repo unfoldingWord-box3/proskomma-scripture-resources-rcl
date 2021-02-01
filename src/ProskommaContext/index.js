@@ -10,14 +10,14 @@ export default function ProsKommaContextProvider(props) {
   const pk = useContext(ProskommaStateContext);
   const [pkChangeId, setPkChangeId] = useState(0);
 
-  const cValue = {
+  const value = {
     pk,
     pkChangeId,
     setPkChangeId,
   };
 
   return (
-    <ProskommaContext.Provider value={cValue}>
+    <ProskommaContext.Provider value={value}>
       {props.children}
     </ProskommaContext.Provider>
   );
