@@ -80,7 +80,6 @@ const AddDocument = () => {
 
   return (
     <Fragment>
-      <div>Processor id={pk.processorId}</div>
       <Button color="primary" onClick={onDialogOpen}>
         Add Document
       </Button>

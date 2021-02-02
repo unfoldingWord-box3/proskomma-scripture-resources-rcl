@@ -3,8 +3,10 @@
 Display global stats about Proskomma.
 
 ```jsx
-// import { ProsKomma } from 'proskomma';
 import StoreStatus from './StoreStatus';
+import ProsKommaContextProvider from '../../ProskommaContext';
 
-<StoreStatus />;
+<ProsKommaContextProvider>
+    <StoreStatus />
+</ProsKommaContextProvider>;
 ```
