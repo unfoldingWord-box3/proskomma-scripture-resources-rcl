@@ -6,7 +6,7 @@ export const ProskommaStateContext = createContext(pk);
 
 export const ProskommaContext = createContext({});
 
-export default function ProsKommaContextProvider(props) {
+export default function ProsKommaContextProvider({ children }) {
   const pk = useContext(ProskommaStateContext);
   const [pkChangeId, setPkChangeId] = useState(0);
 
@@ -18,7 +18,7 @@ export default function ProsKommaContextProvider(props) {
 
   return (
     <ProskommaContext.Provider value={value}>
-      {props.children}
+      {children}
     </ProskommaContext.Provider>
   );
 }
