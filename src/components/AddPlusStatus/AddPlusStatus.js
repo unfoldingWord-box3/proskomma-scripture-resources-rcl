@@ -5,7 +5,7 @@ import ProsKommaContextProvider from '../../ProskommaContext';
 
 const AddPlusStatus = () => {
   return (
-    <ProsKommaContextProvider>
+    <ProsKommaContextProvider importSpecs={["foo", "baa"]}>
       <StoreStatus />
       <AddDocument />
     </ProsKommaContextProvider>
