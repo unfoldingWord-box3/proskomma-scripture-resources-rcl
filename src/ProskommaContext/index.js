@@ -1,35 +1,23 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
-import { ProsKomma } from 'proskomma';
-
-const pk = new ProsKomma();
-export const ProskommaStateContext = createContext(pk);
+import React, {createContext, useContext, useEffect, useState} from 'react';
+import {ProskommaClassContext} from '../ProskommaClass/index';
 
 export const ProskommaContext = createContext({});
 
-export default function ProsKommaContextProvider({ children, importSpecs }) {
-  const pk = useContext(ProskommaStateContext);
-  const [pkChangeId, setPkChangeId] = useState(0);
+export default function ProsKommaContextProvider({children}) {
+    const { pk } = useContext(ProskommaClassContext);
+    const [pkChangeId, setPkChangeId] = useState(0);
 
-  useEffect(
-      () => {
-        if (importSpecs) {
-          for (const importSpec of importSpecs) {
-            console.log(importSpec);
-          }
-        }
-      },
-      []
-  );
+    const value = {
+        pk,
+        pkChangeId,
+        setPkChangeId,
+    };
 
-  const value = {
-    pk,
-    pkChangeId,
-    setPkChangeId,
-  };
-
-  return (
-    <ProskommaContext.Provider value={value}>
-      {children}
-    </ProskommaContext.Provider>
-  );
+    return (
+        <ProskommaContext.Provider value={value}>
+            {children}
+        </ProskommaContext.Provider>
+    );
 }
+
+export const ProskommaStateContext = createContext(pk);
