@@ -2,16 +2,14 @@ import React from 'react';
 import StoreStatus from '../StoreStatus';
 import AddDocument from '../AddDocument';
 import ProsKommaContextProvider from '../../ProskommaContext';
-import ProsKommaClassProvider from '../../ProskommaClass';
+import { ProsKomma } from 'proskomma';
 
 const AddPlusStatus = () => {
     return (
-        <ProsKommaClassProvider>
-            <ProsKommaContextProvider>
-                <StoreStatus/>
-                <AddDocument/>
-            </ProsKommaContextProvider>
-        </ProsKommaClassProvider>
+        <ProsKommaContextProvider pkClass={ProsKomma}>
+            <StoreStatus/>
+            <AddDocument/>
+        </ProsKommaContextProvider>
     );
 };
 

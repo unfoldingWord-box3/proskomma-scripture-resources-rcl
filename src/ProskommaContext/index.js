@@ -1,11 +1,12 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
-import {ProskommaClassContext} from '../ProskommaClass/index';
 
 export const ProskommaContext = createContext({});
 
-export default function ProsKommaContextProvider({children}) {
-    const { pk } = useContext(ProskommaClassContext);
+let pk;
+
+export default function ProsKommaContextProvider({pkClass, children}) {
     const [pkChangeId, setPkChangeId] = useState(0);
+    if (!pk) {pk = new pkClass()};
 
     const value = {
         pk,

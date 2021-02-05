@@ -9,7 +9,7 @@ const StoreStatus = () => {
   return (
     <CardContent>
       <Typography variant="h6">
-        Proskomma Store Status
+          {pk.processor()}
       </Typography>
       <Typography variant="body2">
         {pk.nDocSets()} DocSet{pk.nDocSets() === 1 ? '' : 's'}
