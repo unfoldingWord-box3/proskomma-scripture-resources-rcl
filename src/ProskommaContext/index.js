@@ -20,5 +20,3 @@ export default function ProsKommaContextProvider({pkClass, children}) {
         </ProskommaContext.Provider>
     );
 }
-
-export const ProskommaStateContext = createContext(pk);
