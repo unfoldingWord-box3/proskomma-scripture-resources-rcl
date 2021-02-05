@@ -3,7 +3,17 @@
 Add a document to Proskomma.
 
 ```jsx
-import AddDocument from "./AddDocument";
+import AddDocument from './AddDocument';
+import ProskommaContextProvider from '../../ProskommaContext';
+import { UWProskomma } from 'uw-proskomma';
 
-<AddDocument/>
+function Component() {
+  return (
+    <ProskommaContextProvider pkClass={UWProskomma}>
+      <AddDocument />
+    </ProskommaContextProvider>
+  );
+}
+
+<Component />;
 ```

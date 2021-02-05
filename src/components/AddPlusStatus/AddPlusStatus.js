@@ -1,15 +1,15 @@
-import React, {Fragment, useState} from 'react';
-
+import React from 'react';
 import StoreStatus from '../StoreStatus';
 import AddDocument from '../AddDocument';
+import ProsKommaContextProvider from '../../ProskommaContext';
+import { ProsKomma } from 'proskomma';
 
 const AddPlusStatus = () => {
-    const [pkChangeId, setPkChangeId] = useState(0);
     return (
-        <Fragment>
-            <StoreStatus changeId={pkChangeId} />
-            <AddDocument changeId={pkChangeId} setChangeId={setPkChangeId}/>
-        </Fragment>
+        <ProsKommaContextProvider pkClass={ProsKomma}>
+            <StoreStatus/>
+            <AddDocument/>
+        </ProsKommaContextProvider>
     );
 };
 
