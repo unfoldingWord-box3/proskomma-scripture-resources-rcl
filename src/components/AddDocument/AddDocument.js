@@ -102,7 +102,7 @@ const AddDocument = () => {
                         margin="normal"
                         label="Organization"
                         InputProps={{name: 'docOrg'}}
-                        onChange={(e) => setDocOrd(e.target.value)}
+                        onChange={(e) => setDocOrg(e.target.value)}
                         value={docOrg}
                         fullWidth
                     />
