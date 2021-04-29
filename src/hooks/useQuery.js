@@ -11,6 +11,7 @@ export default function useQuery(query) {
     async function runQuery() {
       try {
         setLoading(true);
+        setErrors(null);
 
         const { errors, data } = await pk.gqlQuery(query);
         if (errors) setErrors(errors);
@@ -18,6 +19,7 @@ export default function useQuery(query) {
 
         setLoading(false);
       } catch (error) {
+        setLoading(false);
         setErrors([error]);
       }
     }
@@ -27,3 +29,9 @@ export default function useQuery(query) {
 
   return { loading, errors, data };
 }
+
+// function useUsfm(props) {
+//   const query = getTemplate(props)
+
+//   return useQuery(query);
+// }
